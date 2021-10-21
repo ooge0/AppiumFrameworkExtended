@@ -16,11 +16,10 @@ import java.util.Properties;
 public class CapabilitiesHelper {
     public static AndroidDriver<AndroidElement> getCapabilities(String appName, boolean cloudFlag) throws IOException, InterruptedException {
         if (cloudFlag) {
-            getCapabilitiesForCloud(appName);
+            return getCapabilitiesForCloud(appName);
         } else {
-            getCapabilitiesForLocalRun(appName);
+            return getCapabilitiesForLocalRun(appName);
         }
-        return null;
     }
 
     public static AndroidDriver<AndroidElement> getCapabilitiesForLocalRun(String appName) throws IOException {
@@ -53,16 +52,24 @@ public class CapabilitiesHelper {
         String mobileCapabilityType = (String) p.get("mobileCapabilityType");
         String browserstackUserId = (String) p.get("browserstackUserId");
         String browserstackKey = (String) p.get("browserstackKey");
-        String browserstackAppUrl = (String) p.get("browserstackAppUrl");
+        String browserStackAppUrl = (String) p.get("browserStack"+ appName+ "Url");
         int appiumCommandTimeout = Integer.parseInt((String) p.get("appiumCommandTimeout"));
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         // Set your access credentials
         capabilities.setCapability("browserstack.user", browserstackUserId);
         capabilities.setCapability("browserstack.key", browserstackKey);
         // Set URL of the application under test
         if (appName.contains("ApiDemoApp")) {
-            capabilities.setCapability("app", browserstackAppUrl);
+            capabilities.setCapability("app", "bs://f7198c1c2e07fde3cdca86e95ef828eedad228de");
+//            capabilities.setCapability("app", browserStackAppUrl);
+        }
+        else if (appName.contains(("StoreApp"))){
+            capabilities.setCapability("app", "bs://e49ce5121861d083db516cd1d5d0363c2db2557b");
+//            capabilities.setCapability("app", browserStackAppUrl);
+        }
+        else if (appName.contains(("BookingApp"))){
+            capabilities.setCapability("app", "bs://04ebb26e61fecf62c331f2b6b5d68b5d84046bd7");
+//            capabilities.setCapability("app", browserStackAppUrl);
         }
         // Specify device and os_version for testing
         capabilities.setCapability("device", "Google Pixel 3");

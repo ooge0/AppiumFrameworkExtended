@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Test Suite" parallel="tests">
+    <listeners>
+    </listeners>
+    <test thread-count="5" name="test_1">
+        <classes>
+            <class name="BookingAppTests_tc_1_Cloud"></class>
+        </classes>
+    </test>
+    <test thread-count="5" name="test_2">
+        <classes>
+            <class name="BookingAppTests_tc_1_Cloud"></class>
+            <class name="BaseApiDemoApp_tc_1_Cloud">
+                <methods>
+                    <exclude name="totalValidation"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="5" name="test_3">
+        <classes>
+            <class name="BaseApiDemoApp_tc_1_Cloud">
+                <methods>
+                    <exclude name="totalValidation"></exclude>
+                </methods>
+            </class>
+            <class name="E_Commerce_tc_4_Cloud">
+                <parameter name="name" value="My name"></parameter>
+                <parameter name="country" value="Argentina"></parameter>
+                <parameter name="totalAmountOfAddedProductsToTheCart" value="1"></parameter>
+            </class>
+        </classes>
+    </test>
+</suite>

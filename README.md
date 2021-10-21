@@ -1,7 +1,7 @@
 # appiumQA
 
 
-##How to run virtual device from command line on Windows machine 
+## How to run virtual device from command line on Windows machine 
 ```
 cd %ANDROID_HOME%\emulator
 emulator -avd <emulatorName>

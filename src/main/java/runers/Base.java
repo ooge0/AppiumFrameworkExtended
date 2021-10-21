@@ -54,33 +54,4 @@ public class Base {
         FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "\\screenshots\\defects_" + testName + ".png"));
     }
 
-//    public static AndroidDriver<AndroidElement>  getConfiguredCapabilities(String appFileName) throws IOException {
-//        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\globalHelpers\\global.properties");
-//        Properties p = new Properties();
-//        p.load(fis);
-//
-//        String devicePlatformName = (String) p.get("devicePlatformName");
-//        String deviceName = (String) p.get("deviceName");
-//        String avdName = (String) p.get("avdName");
-//        String mobileCapabilityType = (String) p.get("mobileCapabilityType"); //"Uiautomator2";
-//        String deviceOsVersion = (String) p.get("deviceOsVersion");
-//        int appiumCommandTimeout = Integer.parseInt((String) p.get("appiumCommandTimeout"));
-//        String appiumServerUrl = (String) p.get("appiumServerUrl");
-////        int appiumServerPort = Integer.parseInt((String) p.get("appiumServerPort"));
-//        File appDir = new File(System.getProperty("user.dir") + "\\src\\main\\apkSources");
-//        File appFile = new File(appDir, (String) p.get(appFileName));
-//
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("avd", avdName);
-//        capabilities.setCapability(MobileCapabilityType.VERSION, deviceOsVersion);
-//        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, devicePlatformName);
-//        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName); //<< for defined devices, when you know the name of devices
-//        capabilities.setCapability(MobileCapabilityType.APP, appFile.getAbsolutePath());
-//        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, mobileCapabilityType);
-//        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, appiumCommandTimeout);
-//        capabilities.setCapability("autoGrantPermissions", true);
-//        capabilities.setCapability("fullReset", false);
-//        driver = new AndroidDriver<AndroidElement>(new URL(appiumServerUrl), capabilities);
-//        return driver;
-//    }
 }

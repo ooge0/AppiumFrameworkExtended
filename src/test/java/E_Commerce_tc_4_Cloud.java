@@ -18,25 +18,20 @@ import java.util.concurrent.TimeUnit;
 import static utilities.SystemUtils.killAllNodes;
 
 public class E_Commerce_tc_4_Cloud extends Base {
-    @BeforeTest
-    public void beforeTests () throws IOException, InterruptedException {
-        killAllNodes();
-    }
-
     /*
     Test: Adding product to the shopping cart, checking link functionality by Gestures in the cart
      */
     @Parameters({"name", "country", "totalAmountOfAddedProductsToTheCart"})
     @Test
     public static void totalValidation(String name, String country, int totalAmountOfAddedProductsToTheCart) throws IOException, InterruptedException {
-        AndroidDriver<AndroidElement> driver = CapabilitiesHelper.getCapabilities("StoreAppApk", true);
-
+        AndroidDriver<AndroidElement> driver = CapabilitiesHelper.getCapabilities("StoreApp", true);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         FormPage formPage = new FormPage(driver);
         ProductCatalogPage productCatalogPage = new ProductCatalogPage(driver);
         CartPage cartPage = new CartPage(driver);
         Utilities utilities = new Utilities(driver);
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         // 1. fill the nam field
         formPage.getNameField().sendKeys(name);
         driver.hideKeyboard();

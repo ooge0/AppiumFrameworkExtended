@@ -30,7 +30,7 @@ public class E_Commerce_tc_4 extends Base {
     @Test
     public static void totalValidation(String name, String country, int totalAmountOfAddedProductsToTheCart) throws IOException, InterruptedException {
         AppiumDriverLocalService service = starAppiumServer();
-        AndroidDriver<AndroidElement> driver = CapabilitiesHelper.getCapabilities("StoreAppApk", false);
+        AndroidDriver<AndroidElement> driver = CapabilitiesHelper.getCapabilities("StoreApp", false);
 
         FormPage formPage = new FormPage(driver);
         ProductCatalogPage productCatalogPage = new ProductCatalogPage(driver);

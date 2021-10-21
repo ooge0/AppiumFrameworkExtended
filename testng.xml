@@ -7,9 +7,12 @@
     </listeners>
     <test name="test_1">
         <classes>
+<!--            <class name="BookingAppTests_tc_1"></class>-->
+<!--            -->
             <class name="BaseApiDemoApp_tc_1">
                 <methods>
-                    <exclude name="totalValidation"></exclude>
+<!--                    <exclude name="totalValidation"></exclude>-->
+<!--                    <exclude name="SingleData"></exclude>-->
                 </methods>
             </class>
 <!--                        <class name="E_Commerce_tc_4">-->
