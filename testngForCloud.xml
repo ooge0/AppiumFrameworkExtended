@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+    <listeners>
+        <listener class-name="utilities.Listeners"></listener>
+        <listener class-name="utilities.ExtentReporterNG"></listener>
+    </listeners>
+    <test name="test_for_cloud">
+        <classes>
+                        <class name="E_Commerce_tc_4_Cloud">
+                            <parameter name="name" value="My name"></parameter>
+                            <parameter name="country" value="Argentina"></parameter>
+                            <parameter name="totalAmountOfAddedProductsToTheCart" value="1"></parameter>
+                        </class>
+        </classes>
+    </test>
+</suite>
