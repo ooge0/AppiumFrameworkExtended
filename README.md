@@ -16,7 +16,7 @@ emulator -avd Pixel4a
 ## How to check list of connected devices
 ```emulator -list-avds```
 
-#WIKI
+# WIKI
 ## Appium
 ### appium tests, JAVA code examples
 https://github.com/appium/java-client/tree/master/src/test/java/io/appium/java_client/android

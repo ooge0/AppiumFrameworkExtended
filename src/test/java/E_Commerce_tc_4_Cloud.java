@@ -60,6 +60,13 @@ public class E_Commerce_tc_4_Cloud extends Base {
         Assert.assertEquals(sum, Double.parseDouble(total.substring(2)));
     }
 
+    @Parameters({"name", "country", "totalAmountOfAddedProductsToTheCart"})
+    @Test
+    public static void simpleRun(String name, String country, int totalAmountOfAddedProductsToTheCart) throws IOException, InterruptedException {
+        AndroidDriver<AndroidElement> driver = CapabilitiesHelper.getCapabilities("StoreApp", true);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
     private static double getAmount(String amount1) {
         return Double.parseDouble(amount1.split("\\$")[1]);
     }
