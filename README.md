@@ -1,4 +1,4 @@
-# appiumQA
+# AppiumQA project
 
 
 ## How to run virtual device from command line on Windows machine 
